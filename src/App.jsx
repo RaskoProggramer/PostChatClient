@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { AuthContext } from './helpers/AuthContext';
 import PageNotFound from './pages/PageNotFound';
-import Profile from './pages/profile';
+import Profile from './pages/Profile';
 import ChangePassword from './pages/ChangePassword';
 
 function App() {
