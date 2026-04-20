@@ -10,7 +10,7 @@ function ChangePassword() {
     const changePassword = async () => {
         try {
             const response = await axios.put(
-                "http://localhost:3001/auth/changepassword",
+                "https://wepostchat-ca53a83f86b7.herokuapp.com//auth/changepassword",
                 { currentPassword: currentPassword,  newPassword: newPassword },
                 {
                     headers: {

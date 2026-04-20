@@ -18,7 +18,7 @@ function Register() {
 
     const onSubmit = (data) => {
         try {
-           axios.post('http://localhost:3001/auth', data).then((response) => {
+           axios.post('https://wepostchat-ca53a83f86b7.herokuapp.com/auth', data).then((response) => {
             if (response.data.error) {
               alert(response.data.error);
             } else {

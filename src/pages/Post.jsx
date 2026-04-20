@@ -18,12 +18,12 @@ function Post() {
     const fetchData = async () => {
       try {
         const postRes = await axios.get(
-          `http://localhost:3001/posts/ById/${id}`
+          `https://wepostchat-ca53a83f86b7.herokuapp.com/posts/ById/${id}`
         );
         setPostObject(postRes.data);
 
         const commentsRes = await axios.get(
-          `http://localhost:3001/comments/${id}`
+          `https://wepostchat-ca53a83f86b7.herokuapp.com/comments/${id}`
         );
         setComments(commentsRes.data);
       } catch (error) {
@@ -40,7 +40,7 @@ function Post() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/comments",
+        "https://wepostchat-ca53a83f86b7.herokuapp.com/comments",
         { PostId: id, comment: newComment },
         {
           headers: {
@@ -71,7 +71,7 @@ function Post() {
   const deleteComment = async (commentId) => {
     try {
       await axios.delete(
-        `http://localhost:3001/comments/${commentId}`,
+        `https://wepostchat-ca53a83f86b7.herokuapp.com/comments/${commentId}`,
         {
           headers: {
             accessToken: localStorage.getItem('accessToken'),
@@ -91,7 +91,7 @@ function Post() {
   const deletePost = async () => {
     try {
       await axios.delete(
-        `http://localhost:3001/posts/${id}`,
+        `https://wepostchat-ca53a83f86b7.herokuapp.com/posts/${id}`,
         {
           headers: {
             accessToken: localStorage.getItem('accessToken'),
@@ -114,7 +114,7 @@ function Post() {
         if (!newTitle || !newTitle.trim()) return;
 
         await axios.put(
-          "http://localhost:3001/posts/title",
+          "https://wepostchat-ca53a83f86b7.herokuapp.com/posts/title",
           {
             title: newTitle,
             postId: id,
@@ -138,7 +138,7 @@ function Post() {
         if (!newPost || !newPost.trim()) return;
 
         await axios.put(
-          "http://localhost:3001/posts/body",
+          "https://wepostchat-ca53a83f86b7.herokuapp.com/posts/body",
           {
             postText: newPost,
             postId: id,

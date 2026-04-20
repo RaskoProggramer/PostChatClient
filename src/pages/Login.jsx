@@ -15,7 +15,7 @@ function Login() {
       const data = { username, password };
 
       const response = await axios.post(
-        'http://localhost:3001/auth/login',
+        'https://wepostchat-ca53a83f86b7.herokuapp.com/auth/login',
         data
       );
 

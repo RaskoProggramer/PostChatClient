@@ -27,7 +27,7 @@ function Create() {
   const onSubmit = (async (data) => {
    try {
     await axios.post(
-      "http://localhost:3001/posts",
+      "https://wepostchat-ca53a83f86b7.herokuapp.com/posts",
       data,
       {
         headers: {

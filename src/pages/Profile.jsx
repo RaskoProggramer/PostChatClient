@@ -14,12 +14,12 @@ function Profile() {
     const fetchProfile = async () => {
       try {
         const userRes = await axios.get(
-          `http://localhost:3001/auth/basicInfo/${id}`
+          `https://wepostchat-ca53a83f86b7.herokuapp.com/auth/basicInfo/${id}`
         );
         setUsername(userRes.data.username);
 
         const postsRes = await axios.get(
-          `http://localhost:3001/posts/ByUserId/${id}`
+          `https://wepostchat-ca53a83f86b7.herokuapp.com/posts/ByUserId/${id}`
         );
         setListOfPosts(postsRes.data);
 
