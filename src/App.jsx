@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from './pages/Home';
 import Create from './pages/Createpost';
 import Post from './pages/Post';
-import Login from './pages/login';
+import Login from './pages/Login';
 import Register from './pages/Register';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
