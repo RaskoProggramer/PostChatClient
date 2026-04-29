@@ -1,71 +1,185 @@
-.App {
-  width: 100vw;
-  height: auto;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+/* GLOBAL */
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f7fb;
 }
 
-.post {
-  width: 400px;
-  height: 300px;
-  border-radius: 10px;
+.App {
+  width: 100%;
+  min-height: 100vh;
+
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  align-items: center;
+}
+
+/* NAVBAR */
+
+.navbar {
+  width: 100%;
+  min-height: 70px;
+
+  background-color: dodgerblue;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 30px;
+
+  color: white;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.navbar a:hover {
+  opacity: 0.8;
+}
+
+.loggedInContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.loggedInContainer h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.navbar button {
+  width: 120px;
+  height: 40px;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  background-color: white;
+  color: dodgerblue;
+
+  font-weight: bold;
+
+  transition: 0.3s ease;
+}
+
+.navbar button:hover {
+  opacity: 0.9;
+}
+
+/* POSTS */
+
+.post {
+  width: 100%;
+  max-width: 500px;
+  min-height: 300px;
+
+  border-radius: 12px;
+  margin-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+
   border: 1px solid lightgray;
-  font-family: Arial, Helvetica, sans-serif;
+
+  background-color: white;
+
+  overflow: hidden;
 
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  transition: 0.3s ease;
 }
 
 .post:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   cursor: pointer;
 }
+
 .post .title {
-  flex: 20%;
-  border-bottom: 1px solid lightgray;
+  padding: 20px;
+
   background-color: dodgerblue;
-  display: grid;
-  place-content: center;
+
   color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .post .body {
-  flex: 60%;
-  display: grid;
-  place-content: center;
-}
+  flex: 1;
 
-.post .footer {
-  flex: 20%;
-  border-top: 1px solid lightgray;
-  display: flex;
-  align-items: center;
-  padding-left: 15px;
-  background-color: dodgerblue;
-  color: white;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
+  padding: 25px;
 
-/* CREATE POST PAGE CSS */
-
-.createPostPage {
-  font-family: Arial, Helvetica, sans-serif;
-  width: 100vw;
-  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  text-align: center;
+
+  font-size: 17px;
 }
-.formPage {
+
+.post .footer {
+  display: flex;
+  align-items: center;
+
+  padding: 15px;
+
+  background-color: dodgerblue;
+
+  color: white;
+}
+
+.footer .username {
+  flex: 50%;
+}
+
+.footer .buttons {
+  flex: 50%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.buttons label {
+  margin-right: 15px;
+  margin-left: 10px;
+  color: white;
+}
+
+/* FORMS */
+
+.formPage,
+.createPostPage,
+.loginContainer {
   width: 100%;
   min-height: 100vh;
 
@@ -74,12 +188,11 @@ body {
   align-items: center;
 
   padding: 20px;
-  box-sizing: border-box;
 }
 
 .formContainer {
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
 
   display: flex;
   flex-direction: column;
@@ -87,12 +200,12 @@ body {
   gap: 10px;
 
   padding: 30px;
+
   border-radius: 12px;
 
   background-color: white;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 
-  box-sizing: border-box;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .formContainer label {
@@ -100,112 +213,171 @@ body {
   font-weight: 600;
 }
 
-.inputField {
+.inputField,
+.loginContainer input,
+.addCommentContainer input {
   width: 100%;
+  max-width: 350px;
+
+  height: 50px;
+
   padding: 12px;
 
-  border: 1px solid #ccc;
   border-radius: 8px;
+  border: 2px solid dodgerblue;
 
   font-size: 16px;
 
-  box-sizing: border-box;
+  outline: none;
 }
 
-.formContainer span {
-  color: red;
-  font-size: 14px;
-}
+.formContainer button,
+.loginContainer button,
+.addCommentContainer button {
+  width: 100%;
+  max-width: 350px;
 
-.formContainer button {
-  margin-top: 10px;
-  padding: 12px;
+  height: 50px;
 
   border: none;
   border-radius: 8px;
 
-  background-color: #2c2c2c;
+  background-color: dodgerblue;
   color: white;
 
   font-size: 16px;
+  font-weight: bold;
+
   cursor: pointer;
 
   transition: 0.3s ease;
 }
 
-.formContainer button:hover {
+.formContainer button:hover,
+.loginContainer button:hover,
+.addCommentContainer button:hover {
   opacity: 0.9;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .formContainer {
-    padding: 20px;
-  }
-
-  .formContainer label {
-    font-size: 15px;
-  }
-
-  .inputField {
-    font-size: 15px;
-    padding: 10px;
-  }
-
-  .formContainer button {
-    font-size: 15px;
-  }
-}
-
+.formContainer span,
 span {
   color: red;
+  font-size: 14px;
 }
 
-/* NAVBAR */
+/* INDIVIDUAL POST */
 
-.navbar {
+.postPage {
   width: 100%;
-  height: 70px;
-  background-color: dodgerblue;
+
   display: flex;
-  align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
+  gap: 20px;
+
+  padding: 20px;
 }
 
-.navbar button {
-  width: 150px;
-  height: 40px;
-  cursor: pointer;
+.leftSide,
+.rightSide {
+  flex: 1;
 }
 
-.navbar a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: white;
-}
-
-.navbar .loggedInContainer {
-  flex: 50%;
-  height: 100%;
+.leftSide {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+}
+
+.rightSide .addCommentContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 20px;
+}
+
+.rightSide .listOfComments {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: 30px;
+}
+
+.listOfComments .comment {
+  width: 100%;
+  max-width: 600px;
+
+  padding: 25px;
+
+  border: 1px solid lightgray;
+  border-radius: 8px;
+
+  background-color: white;
+
+  margin-top: 20px;
+
+  word-wrap: break-word;
+}
+
+#individual {
+  width: 100%;
+  max-width: 700px;
+
+  min-height: 500px;
+}
+
+#individual .title,
+#individual .footer {
+  font-size: 24px;
+}
+
+#individual .body {
+  font-size: 20px;
+}
+
+/* LOGIN */
+
+.loginContainer {
+  flex-direction: column;
+}
+
+.loginContainer form {
+  width: 100%;
+  max-width: 420px;
+
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-/* MOBILE RESPONSIVENESS */
+/* MOBILE */
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
 
-    padding: 15px;
+    gap: 15px;
+
+    padding: 20px;
   }
 
   .links {
-    width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+
+    width: 100%;
   }
 
   .loggedInContainer {
@@ -213,149 +385,32 @@ span {
     justify-content: space-between;
   }
 
-  .links a {
-    font-size: 15px;
+  .post {
+    width: 95%;
   }
 
-  .loggedInContainer h1 {
-    font-size: 16px;
+  .postPage {
+    flex-direction: column;
   }
-}
 
-/* INDIVIDUAL POST */
-.postPage {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-}
+  #individual {
+    width: 100%;
+  }
 
-.leftSide {
-  flex: 50%;
-  height: calc(100vh - 70px);
-  display: grid;
-  place-items: center;
-}
+  #individual .title,
+  #individual .footer {
+    font-size: 20px;
+  }
 
-.rightSide {
-  flex: 50%;
-  height: calc(100vh - 70px);
-  display: grid;
-  place-items: center;
-  display: flex;
-  flex-direction: column;
-}
+  #individual .body {
+    font-size: 17px;
+  }
 
-.rightSide .addCommentContainer {
-  flex: 20%;
-  width: 100%;
-  display: grid;
-  place-items: center;
-  margin-top: 25px;
-}
+  .listOfComments .comment {
+    width: 95%;
+  }
 
-.addCommentContainer input,
-button {
-  width: 200px;
-  height: 50px;
-  border-radius: 8px;
-  border: none;
-}
-
-.addCommentContainer button {
-  background-color: dodgerblue;
-  color: white;
-}
-
-.addCommentContainer input {
-  border: 2px solid dodgerblue;
-}
-
-.rightSide .listOfComments {
-  flex: 80%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.listOfComments .comment {
-  width: 70%;
-  height: auto;
-  padding: 30px;
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-#individual {
-  height: 500px;
-  width: 600px;
-}
-
-#individual .title,
-#individual .footer {
-  font-size: 30px;
-}
-
-#individual .body {
-  font-size: 25px;
-}
-
-/* LOGIN */
-
-.loginContainer {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  padding-top: 100px;
-}
-
-.loginContainer input,
-button {
-  width: 200px;
-  height: 50px;
-  border-radius: 8px;
-  border: none;
-  margin: 10px;
-}
-
-.loginContainer button {
-  background-color: dodgerblue;
-  color: white;
-}
-
-.loginContainer input {
-  border: 2px solid dodgerblue;
-}
-
-
-.buttons label {
-  margin-right: 20px;
-  margin-left: 10px;
-  color: white;
-}
-
-.post .footer {
-  flex: 20%;
-  border-top: 1px solid lightgray;
-  display: flex;
-  align-items: center;
-  padding-left: 15px;
-  background-color: dodgerblue;
-  color: white;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-.footer .username {
-  flex: 50%;
-}
-.footer .buttons {
-  flex: 50%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  .formContainer {
+    padding: 20px;
+  }
 }
