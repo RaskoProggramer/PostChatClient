@@ -19,7 +19,7 @@ function Home() {
         if (!localStorage.getItem('accessToken')) {
           navigate('/login');
         } else {
-          const response = await axios.get("https://wepostchat-ca53a83f86b7.herokuapp.com//posts", {
+          const response = await axios.get("https://wepostchat-ca53a83f86b7.herokuapp.com/posts", {
             headers: {
               accessToken: localStorage.getItem('accessToken'),
             },
@@ -42,7 +42,7 @@ function Home() {
   const likeAPost = async (postId) => {
     try {
       const response = await axios.post(
-        "http://https://wepostchat-ca53a83f86b7.herokuapp.com/likes",
+        "https://wepostchat-ca53a83f86b7.herokuapp.com/likes",
         { PostId: postId },
         {
           headers: {
