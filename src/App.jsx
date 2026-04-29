@@ -68,7 +68,7 @@ function App() {
             </div>
             <div className="loggedInContainer">
               {authState.status && <h1>{authState.username.charAt(0).toUpperCase() + authState.username.slice(1)}</h1>}
-              {authState.status && <button onClick={logout}> Logout</button>}
+              {authState.status && <button onClick={logout}><FaSignOutAlt className="navIcon" /> Logout</button>}
             </div>
           </div>
         <Routes>
