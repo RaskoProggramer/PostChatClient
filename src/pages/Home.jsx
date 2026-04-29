@@ -90,13 +90,13 @@ function Home() {
 
         return (
           <div className="post" key={value.id}>
-            <div className="title">{value.title.charAt(0).toUpperCase() + value.username.slice(1)}</div>
+            <div className="title">{value.title.charAt(0).toUpperCase() + value.title.slice(1)}</div>
 
             <div
               className="body"
               onClick={() => navigate(`/posts/${value.id}`)}
             >
-              {value.postText.charAt(0).toUpperCase() + value.username.slice(1)}
+              {value.postText.charAt(0).toUpperCase() + value.postText.slice(1)}
             </div>
 
             <div className="footer">
