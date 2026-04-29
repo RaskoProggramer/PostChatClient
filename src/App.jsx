@@ -11,6 +11,11 @@ import { AuthContext } from './helpers/AuthContext';
 import PageNotFound from './pages/PageNotFound';
 import Profile from './pages/Profile';
 import ChangePassword from './pages/ChangePassword';
+import {
+  FaHome,
+  FaPlusCircle,
+  FaSignOutAlt,
+} from "react-icons/fa";
 
 function App() {
   const [authState, setAuthState] = useState({
@@ -51,13 +56,13 @@ function App() {
             <div className="links">
               {authState.status ? (
               <>
-              <Link to="/"> Home Page</Link>
-              <Link to="/posts"> Create A Post</Link>
+              <Link to="/"><FaHome className="navIcon" /> Home Page</Link>
+              <Link to="/posts"><FaPlusCircle className="navIcon" /> Create A Post</Link>
               </>
               ) : (
               <>
-              <Link to="/login"> Login</Link>
-              <Link to="/registration"> Registration</Link>
+              <Link to="/login"><FaSignOutAlt className="navIcon" /> Login</Link>
+              <Link to="/registration"><FaPlusCircle className="navIcon" /> Registration</Link>
               </>
               )}
             </div>
