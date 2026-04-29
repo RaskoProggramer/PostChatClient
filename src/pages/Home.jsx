@@ -24,8 +24,11 @@ function Home() {
               accessToken: localStorage.getItem('accessToken'),
             },
           });
-          console.log(response);
-          setListOfPosts(response.data.allPosts);
+
+          setListOfPosts(response.data.allPosts.map((post) => ({
+            ...post,
+            Likes: post.Likes || [], // Ensure Likes is always an array
+          })));
 
           setLikedPosts(
             response.data.liked.map((like) => Number(like.PostId)));
