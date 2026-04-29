@@ -135,6 +135,36 @@ span {
   align-items: center;
 }
 
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 15px;
+  }
+
+  .links {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .loggedInContainer {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .links a {
+    font-size: 15px;
+  }
+
+  .loggedInContainer h1 {
+    font-size: 16px;
+  }
+}
+
 /* INDIVIDUAL POST */
 .postPage {
   display: flex;
