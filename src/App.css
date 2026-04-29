@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f5f7fb;
+  background-color: #f4f6f9;
 }
 
 .App {
@@ -24,7 +24,7 @@ body {
 
 .navbar {
   width: 100%;
-  min-height: 70px;
+  height: 70px;
 
   background-color: dodgerblue;
 
@@ -32,9 +32,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  padding: 15px 30px;
-
-  color: white;
+  padding: 0 40px;
 }
 
 .links {
@@ -43,15 +41,11 @@ body {
   gap: 20px;
 }
 
-.navbar a {
+.links a {
   text-decoration: none;
   color: white;
   font-size: 16px;
-  transition: 0.3s ease;
-}
-
-.navbar a:hover {
-  opacity: 0.8;
+  font-weight: 500;
 }
 
 .loggedInContainer {
@@ -61,12 +55,13 @@ body {
 }
 
 .loggedInContainer h1 {
+  color: white;
   font-size: 18px;
   margin: 0;
 }
 
 .navbar button {
-  width: 120px;
+  width: 110px;
   height: 40px;
 
   border: none;
@@ -78,101 +73,80 @@ body {
   color: dodgerblue;
 
   font-weight: bold;
-
-  transition: 0.3s ease;
-}
-
-.navbar button:hover {
-  opacity: 0.9;
 }
 
 /* POSTS */
 
 .post {
-  width: 100%;
-  max-width: 500px;
-  min-height: 300px;
+  width: 500px;
+  min-height: 320px;
 
-  border-radius: 12px;
   margin-top: 30px;
 
-  display: flex;
-  flex-direction: column;
-
-  border: 1px solid lightgray;
+  border-radius: 12px;
 
   background-color: white;
 
   overflow: hidden;
 
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 1px solid lightgray;
+
+  display: flex;
+  flex-direction: column;
 
   transition: 0.3s ease;
+
+  box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px;
 }
 
 .post:hover {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  cursor: pointer;
+  transform: translateY(-3px);
+
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
 }
 
 .post .title {
-  padding: 20px;
-
   background-color: dodgerblue;
-
   color: white;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 20px;
+
+  font-size: 22px;
+  font-weight: bold;
 
   text-align: center;
-
-  font-size: 20px;
-  font-weight: bold;
 }
 
 .post .body {
   flex: 1;
 
-  padding: 25px;
-
   display: flex;
   justify-content: center;
   align-items: center;
 
-  text-align: center;
+  padding: 25px;
 
-  font-size: 17px;
+  text-align: center;
 }
 
 .post .footer {
+  background-color: dodgerblue;
+  color: white;
+
+  padding: 15px 20px;
+
   display: flex;
   align-items: center;
-
-  padding: 15px;
-
-  background-color: dodgerblue;
-
-  color: white;
 }
 
 .footer .username {
-  flex: 50%;
+  flex: 1;
 }
 
 .footer .buttons {
-  flex: 50%;
-
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-}
-
-.buttons label {
-  margin-right: 15px;
-  margin-left: 10px;
-  color: white;
+  gap: 10px;
 }
 
 /* FORMS */
@@ -181,7 +155,7 @@ body {
 .createPostPage,
 .loginContainer {
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
 
   display: flex;
   justify-content: center;
@@ -191,34 +165,29 @@ body {
 }
 
 .formContainer {
-  width: 100%;
-  max-width: 420px;
+  width: 400px;
 
-  display: flex;
-  flex-direction: column;
-
-  gap: 10px;
+  background-color: white;
 
   padding: 30px;
 
   border-radius: 12px;
 
-  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
 
 .formContainer label {
-  font-size: 16px;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .inputField,
 .loginContainer input,
 .addCommentContainer input {
   width: 100%;
-  max-width: 350px;
-
   height: 50px;
 
   padding: 12px;
@@ -227,16 +196,12 @@ body {
   border: 2px solid dodgerblue;
 
   font-size: 16px;
-
-  outline: none;
 }
 
 .formContainer button,
 .loginContainer button,
 .addCommentContainer button {
   width: 100%;
-  max-width: 350px;
-
   height: 50px;
 
   border: none;
@@ -249,14 +214,6 @@ body {
   font-weight: bold;
 
   cursor: pointer;
-
-  transition: 0.3s ease;
-}
-
-.formContainer button:hover,
-.loginContainer button:hover,
-.addCommentContainer button:hover {
-  opacity: 0.9;
 }
 
 .formContainer span,
@@ -265,26 +222,23 @@ span {
   font-size: 14px;
 }
 
-/* INDIVIDUAL POST */
+/* POST PAGE */
 
 .postPage {
   width: 100%;
 
   display: flex;
-  gap: 20px;
+  justify-content: center;
 
-  padding: 20px;
+  gap: 30px;
+
+  padding: 30px;
 }
 
 .leftSide,
 .rightSide {
   flex: 1;
-}
-
-.leftSide {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  max-width: 700px;
 }
 
 .rightSide {
@@ -292,92 +246,51 @@ span {
   flex-direction: column;
 }
 
-.rightSide .addCommentContainer {
-  width: 100%;
-
+.addCommentContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  gap: 15px;
-
-  margin-top: 20px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.rightSide .listOfComments {
-  width: 100%;
-
+.listOfComments {
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  padding-bottom: 30px;
+  gap: 20px;
 }
 
-.listOfComments .comment {
-  width: 100%;
-  max-width: 600px;
-
-  padding: 25px;
-
-  border: 1px solid lightgray;
-  border-radius: 8px;
-
+.comment {
   background-color: white;
 
-  margin-top: 20px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
 
-  word-wrap: break-word;
+  padding: 20px;
 }
 
 #individual {
   width: 100%;
   max-width: 700px;
-
-  min-height: 500px;
-}
-
-#individual .title,
-#individual .footer {
-  font-size: 24px;
-}
-
-#individual .body {
-  font-size: 20px;
-}
-
-/* LOGIN */
-
-.loginContainer {
-  flex-direction: column;
-}
-
-.loginContainer form {
-  width: 100%;
-  max-width: 420px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* MOBILE */
 
 @media (max-width: 768px) {
   .navbar {
+    height: auto;
+
     flex-direction: column;
     align-items: flex-start;
 
-    gap: 15px;
-
     padding: 20px;
+
+    gap: 15px;
   }
 
   .links {
     flex-direction: column;
     align-items: flex-start;
 
-    width: 100%;
+    gap: 12px;
   }
 
   .loggedInContainer {
@@ -389,28 +302,26 @@ span {
     width: 95%;
   }
 
+  .formContainer {
+    width: 100%;
+    max-width: 400px;
+  }
+
   .postPage {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leftSide,
+  .rightSide {
+    width: 100%;
+  }
+
+  .addCommentContainer {
     flex-direction: column;
   }
 
   #individual {
-    width: 100%;
-  }
-
-  #individual .title,
-  #individual .footer {
-    font-size: 20px;
-  }
-
-  #individual .body {
-    font-size: 17px;
-  }
-
-  .listOfComments .comment {
     width: 95%;
-  }
-
-  .formContainer {
-    padding: 20px;
   }
 }
