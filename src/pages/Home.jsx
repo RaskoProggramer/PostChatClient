@@ -24,7 +24,7 @@ function Home() {
               accessToken: localStorage.getItem('accessToken'),
             },
           });
-
+          console.log(response);
           setListOfPosts(response.data.allPosts);
 
           setLikedPosts(
