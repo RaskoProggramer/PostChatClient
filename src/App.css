@@ -89,7 +89,7 @@ body {
   padding: 30px;
   border-radius: 12px;
 
-  background-color: rgb(66, 65, 65);
+  background-color: white;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 
   box-sizing: border-box;
@@ -112,70 +112,48 @@ body {
   box-sizing: border-box;
 }
 
-.registerContainer {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  width: 100%;
-  min-height: 100vh;
-
-  padding-top: 100px;
-}
-
-.registerContainer form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.registerContainer label {
-  margin-top: 10px;
-}
-
-.formInput,
-.registerContainer button {
-  width: 200px;
-  height: 50px;
-
-  border-radius: 8px;
-  border: none;
-
-  margin: 10px;
-  padding: 10px;
-
-  font-size: 16px;
-}
-
-.formInput {
-  border: 2px solid dodgerblue;
-}
-
-.registerContainer button {
-  background-color: dodgerblue;
-  color: white;
-
-  cursor: pointer;
-}
-
-.registerContainer span {
+.formContainer span {
   color: red;
   font-size: 14px;
 }
 
-.buttons label {
-  margin-right: 20px;
-  margin-left: 10px;
+.formContainer button {
+  margin-top: 10px;
+  padding: 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #2c2c2c;
   color: white;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.formContainer button:hover {
+  opacity: 0.9;
 }
 
 /* MOBILE */
+@media (max-width: 600px) {
+  .formContainer {
+    padding: 20px;
+  }
 
-@media (max-width: 768px) {
-  .formInput,
-  .registerContainer button {
-    width: 90%;
-    max-width: 300px;
+  .formContainer label {
+    font-size: 15px;
+  }
+
+  .inputField {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .formContainer button {
+    font-size: 15px;
   }
 }
 
@@ -240,7 +218,7 @@ span {
   }
 
   .loggedInContainer h1 {
-    font-size: 8px;
+    font-size: 16px;
   }
 }
 
