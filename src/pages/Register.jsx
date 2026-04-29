@@ -33,7 +33,7 @@ function Register() {
 
   return (
     <div>
-      <div className="loginContainer">
+      <div className="registerContainer">
         <Formik
         initialValues={initialValue}
         onSubmit={onSubmit}
