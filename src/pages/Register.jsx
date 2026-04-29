@@ -33,18 +33,35 @@ function Register() {
 
   return (
     <div>
-      <Formik initialValues={initialValue} onSubmit={onSubmit} validationSchema={validationSchema}>
-              <Form className='formContainer'>
-                <label>Username</label>
-                <ErrorMessage name='username' component='span'/>
-                <Field id="inputCreatePost" name='username' placeholder="e.g Mpho"/>
-                <label>Password</label>
-                <ErrorMessage name='password' component='span'/>
-                <Field id="inputCreatePost" type='password' name='password' placeholder="Your password..."/>
-                <button type='submit'>Register</button>
-              </Form>
-            </Formik>
+      <div className="formPage">
+        <Formik
+        initialValues={initialValue}
+        onSubmit={onSubmit}
+        validationSchema={validationSchema}
+      >
+      <Form className="formContainer">
+        <label>Username</label>
+        <ErrorMessage name="username" component="span" />
+        <Field
+          className="inputField"
+          name="username"
+          placeholder="e.g Mpho"
+        />
+
+        <label>Password</label>
+        <ErrorMessage name="password" component="span" />
+        <Field
+          className="inputField"
+          type="password"
+          name="password"
+          placeholder="Your password..."
+        />
+
+        <button type="submit">Register</button>
+      </Form>
+    </Formik>
     </div>
+  </div>
   )
 }
 
